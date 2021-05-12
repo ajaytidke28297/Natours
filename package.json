@@ -4,11 +4,13 @@
   "description": "Learning Node express & MongoDB",
   "main": "App.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "nodemon server.js",
+    "start:prod": "NODE_ENV=production nodemon server.js"
   },
   "author": "Ajay Tidke",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^9.0.2",
     "express": "^4.17.1",
     "morgan": "^1.10.0"
   }
