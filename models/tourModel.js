@@ -8,8 +8,8 @@ const tourSchema = new mongoose.Schema(
       type: String,
       required: [true, 'A tour must have a name'],
       unique: true,
-      minlength: [40, 'A tour must have less than or equal to 40 characters'],
-      maxlength: [
+      maxlength: [40, 'A tour must have less than or equal to 40 characters'],
+      minlength: [
         10,
         'A tour must have greater than or equal to 10 characters',
       ],
@@ -99,10 +99,10 @@ tourSchema.pre('save', function (next) {
 });
 
 // Query Middleware
-tourSchema.pre(/^find/, function (next) {
-  this.find({ $secretTour: { $ne: true } });
-  next();
-});
+// tourSchema.pre(/^find/, function (next) {
+//   this.find({ $secretTour: { $ne: true } });
+//   next();
+// });
 
 // Aggregation middleware
 tourSchema.pre('aggregate', function (next) {

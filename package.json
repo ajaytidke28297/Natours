@@ -5,13 +5,14 @@
   "main": "App.js",
   "scripts": {
     "start": "nodemon server.js",
-    "start:prod": "NODE_ENV=production nodemon server.js"
+    "start:prod": "SET NODE_ENV=production&& nodemon server.js"
   },
   "author": "Ajay Tidke",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^9.0.2",
     "express": "^4.17.1",
+    "lodash": "^4.17.21",
     "mongoose": "^5.12.10",
     "morgan": "^1.10.0",
     "slugify": "^1.5.3",
