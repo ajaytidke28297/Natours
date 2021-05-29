@@ -4,7 +4,7 @@ dotenv.config({ path: './config.env' });
 
 process.on('uncaughtException', (err) => {
   console.log(err.name, err.message);
-  console.log(`unhandler exception, Shutting down`);
+  console.log(`unhandled exception, Shutting down`);
   process.exit(1);
 });
 
@@ -32,7 +32,7 @@ const server = app.listen(port, () => {
 
 process.on('unhandledRejection', (err) => {
   console.log(err.name, err.message);
-  console.log(`unhandler rejection, Shutting down`);
+  console.log(`unhandled rejection, Shutting down`);
   server.close(() => {
     process.exit(1);
   });
