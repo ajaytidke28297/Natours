@@ -4,7 +4,7 @@
   "description": "Learning Node express & MongoDB",
   "main": "App.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "devstart": "nodemon server.js",
     "start:prod": "SET NODE_ENV=production&& nodemon server.js"
   },
   "author": "Ajay Tidke",
