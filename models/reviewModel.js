@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const catchAsync = require('../utils/catchAsync');
 
 const reviewSchema = new mongoose.Schema(
   {
@@ -31,6 +32,22 @@ const reviewSchema = new mongoose.Schema(
     toObject: { virtuals: true },
   }
 );
+
+reviewSchema.pre(/^find/, function (next) {
+  // this.populate({
+  //   path: 'tour',
+  //   select: 'name',
+  // }).populate({
+  //   path: 'user',
+  //   select: 'name photo',
+  // });
+
+  this.populate({
+    path: 'user',
+    select: 'name photo',
+  });
+  next();
+});
 
 const Review = mongoose.model('Review', reviewSchema);
 
