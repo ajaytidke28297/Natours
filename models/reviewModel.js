@@ -77,6 +77,8 @@ reviewSchema.statics.calacAverageRatings = async function (tourId) {
   }
 };
 
+reviewSchema.index({ tour: 1, user: 1 }, { unique: true });
+
 reviewSchema.post('save', function (next) {
   this.constructor.calacAverageRatings(this.tour);
 });
