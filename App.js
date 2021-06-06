@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cors = require('cors');
 const cookieParser = require('cookie-parser');
+const compression = require('compression');
 
 // 1) Middlewares
 const tourRouter = require('./routes/tourRoutes');
@@ -76,10 +77,7 @@ app.use(
   })
 );
 
-app.use((req, res, next) => {
-  // console.log(req.headers);
-  next();
-});
+app.use(compression());
 
 // 3) Routes
 
