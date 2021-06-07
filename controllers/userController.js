@@ -1,8 +1,8 @@
 const multer = require('multer');
 const sharp = require('sharp');
-const User = require('./../models/userModel');
-const AppError = require('./../utils/appError');
-const catchAsync = require('./../utils/catchAsync');
+const User = require('../models/userModel');
+const AppError = require('../utils/appError');
+const catchAsync = require('../utils/catchAsync');
 const factory = require('./handlerFactory');
 
 // Actually store the file

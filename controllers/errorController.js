@@ -1,4 +1,4 @@
-const AppError = require('./../utils/appError');
+const AppError = require('../utils/appError');
 const lodash = require('lodash');
 
 const handleCastErrorDB = (err) => {
